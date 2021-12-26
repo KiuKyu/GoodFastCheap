@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Pick your poison</legend>
+            <input type="checkbox" id="boxGood" value="Good" onclick="pickGood()">
+            <label for="boxGood">Good</label><br>
+            <input type="checkbox" id="boxFast" value="Fast" onclick="pickFast()">
+            <label for="boxFast">Fast</label><br>
+            <input type="checkbox" id="boxCheap" value="Cheap" onclick="pickCheap()">
+            <label for="boxCheap">Cheap</label>
+        </fieldset>
+    </form>
+</body>
+<script>
+    let checkGood = document.getElementById('boxGood');
+    let checkFast = document.getElementById('boxFast');
+    let checkCheap = document.getElementById('boxCheap');
+
+    function pickGood() {
+        if (checkFast.checked && checkCheap.checked) {
+            checkCheap.checked = false;
+        }
+    }function pickFast() {
+        if (checkGood.checked && checkCheap.checked) {
+            checkGood.checked = false;
+        }
+    }function pickCheap() {
+        if (checkGood.checked && checkFast.checked) {
+            checkFast.checked = false;
+        }
+    }
+</script>
+</html>
